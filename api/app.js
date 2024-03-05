@@ -3,6 +3,9 @@ const cors = require('cors');
 const logger = require('./middleware/logger.js');
 
 const flashcardRouter = require('./routers/flashcard');
+const clientRouter = require('./routers/client');
+const folderRouter = require('./routers/folder');
+const subjectRouter = require('./routers/subject');
 
 const app = express();
 app.use(cors());
@@ -14,5 +17,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/flashcards", flashcardRouter)
+app.use("/client", clientRouter)
+app.use("/folder", folderRouter)
+app.use("/subject", subjectRouter)
 
 module.exports = app;
