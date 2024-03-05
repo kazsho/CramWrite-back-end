@@ -49,6 +49,37 @@ async function update (req, res) {
     }
 }
 
+async function showClient (req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const flashcard = await Flashcard.getByClientId(id);
+        res.status(200).json(flashcard)
+    } catch (err) {
+        res.status(404).json({"error": err.message});
+    }
+}
+
+async function showSubject (req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const flashcard = await Flashcard.getBySubjectId(id);
+        res.status(200).json(flashcard)
+    } catch (err) {
+        res.status(404).json({"error": err.message});
+    }
+}
+
+async function destroy (req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const flashcard = await Flashcard.getOneById(id);
+        await flashcard.destroy()
+        res.status(204).send("Successfully deleted");
+    } catch (err) {
+        res.status(404).json({"error": err.message});
+    }
+}
+
 module.exports = {
-    index, show, showSet, create, update
+    index, show, showSet, create, update, showClient, showSubject, destroy
 }

@@ -63,6 +63,7 @@ CREATE TABLE flashcard (
     client_id INT NOT NULL,
     term VARCHAR (50) NOT NULL,
     definition VARCHAR (255) NOT NULL,
+    colour VARCHAR (50) DEFAULT '#808080',
     PRIMARY KEY (flash_id),
     FOREIGN KEY (subject_id) REFERENCES subject (subject_id),
     FOREIGN KEY (set_id) REFERENCES learn_set (set_id),
