@@ -12,13 +12,14 @@ CREATE TABLE user (
     school_year INT,
     is_teacher BOOLEAN NOT NULL,
     username VARCHAR(50) NOT NULL,
-    password CHAR(10) NOT NULL
+    login_details CHAR(10) NOT NULL
 );
 
 CREATE TABLE subject (
     subject_id INT GENERATED ALWAYS AS IDENTITY,
     user_id INT,
     subject VARCHAR(50) NOT NULL,
+    PRIMARY KEY (subject_id)
     FOREIGN KEY (user_id) REFERENCES user (user_id)
 );
 
@@ -27,6 +28,7 @@ CREATE TABLE quiz (
     subject_id INT NOT NULL,
     quiz_name VARCHAR (255) NOT NULL,
     quiz_description VARCHAR (500) NOT NULL,
+    PRIMARY KEY (quiz_id)
     FOREIGN KEY (subject_id) REFERENCES subjects (subject_id)
 );
 
@@ -37,7 +39,9 @@ CREATE TABLE question (
     good_answer VARCHAR (255) NOT NULL,
     bad_answer1 VARCHAR (255) NOT NULL,
     bad_answer2 VARCHAR (255) NOT NULL,
-    bad_answer3 VARCHAR (255) NOT NULL
+    bad_answer3 VARCHAR (255) NOT NULL,
+    PRIMARY KEY (question_id)
+    FOREIGN KEY (quiz_id) REFERENCES quiz (quiz_id)
 );
 
 CREATE TABLE folder (
@@ -49,6 +53,8 @@ CREATE TABLE set (
     set_id INT GENERATED ALWAYS AS IDENTITY,
     folder_id INT,
     learn_set VARCHAR (50) NOT NULL
+    PRIMARY KEY (set_id)
+    FOREIGN KEY (folder_id) REFERENCES folder (folder_id)
 );
 
 CREATE TABLE flashcard (
@@ -58,4 +64,22 @@ CREATE TABLE flashcard (
     user_id INT NOT NULL,
     term VARCHAR (50) NOT NULL,
     definition VARCHAR (255) NOT NULL
+    PRIMARY KEY (flash_id)
+    FOREIGN KEY (subject_id) REFERENCES subject (subject_id),
+    FOREIGN KEY (set_id) REFERENCES set (set_id),
+    FOREIGN KEY (user_id) REFERENCES user (user_id)    
 );
+
+-- INSERT INTO user (name, school_year, is_teacher, username, password) VALUES ('Henrietta', NULL, true, 'Henrie91', 'lafosse24!' );
+
+INSERT INTO subject ( user_id, subject) VALUES (1, 'Chemistry');
+
+INSERT INTO quiz ( subject_id, quiz_name, quiz_description) VALUES (1, 'Periodic Table', 'All to know about atomic structure');
+
+INSERT INTO question ( quiz_id, question, good_answer, bad_answer1, bad_answer2, bad_answer3) VALUES ( 1, 'What is an isotope?', 'same number of protons, different number of neutrons', 'same number of protons and different number of electrons', 'same number of neutrons, different number of electrons', 'same number of protons and neutrons');
+
+INSERT INTO folder ( folder ) VALUES ('Science');
+
+INSERT INTO set ( folder_id, learn_set) VALUES (1, 'Science Set');
+
+INSERT INTO flashcard ( subject_id, set_id, user_id, term, definition) VALUES ( 1, 1, 1, 'Atom', 'The basic building block for all matter in the universe')
