@@ -9,8 +9,9 @@ class Client {
         this.teacher = is_teacher;
         this.username = username;
         this.password = password;
+    }
         
-}
+
 
 static async getAll() {
     const response = await db.query("SELECT client_id, client, is_teacher, username, password  FROM client ORDER BY client_id;");
@@ -19,6 +20,14 @@ static async getAll() {
 
 static async getOneById(id) {
     const response = await db.query("SELECT client_id, client, is_teacher, username, password FROM client WHERE client_id = $1;", [id]);
+    if (response.rows.length != 1) {
+        throw new Error("Unable to find user.");
+    };
+    return new Client(response.rows[0]);
+}
+
+static async getOneByUsername(username) {
+    const response = await db.query("SELECT client_id, client, is_teacher, username, password FROM client WHERE username = $1;", [username]);
     if (response.rows.length != 1) {
         throw new Error("Unable to find user.");
     };
@@ -34,7 +43,7 @@ static async create(body) {
 
 async update(body) {
     const {client, teacher, username, password} = body;
-    console.log(teacher)
+
     if (!client || (!teacher && teacher !== false) || !username || !password) {
         throw new Error("Missing Data!");
     };
@@ -47,6 +56,11 @@ async destroy() {
     return new Client(response.rows[0]);
 }
 
+
+async checkTeacher() {
+    return this.teacher;
+}
+
 async getFlashcards() {
     const response = await Flashcard.getByClientId(this.id)
     return response;
@@ -56,7 +70,6 @@ async getSubjects() {
     const response = await Subject.getByClientId(this.id)
     return response;
 }
-
 
 }
 

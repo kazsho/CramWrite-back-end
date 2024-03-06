@@ -53,10 +53,8 @@ CREATE TABLE learn_set (
     set_id INT GENERATED ALWAYS AS IDENTITY,
     folder_id INT,
     learn_set VARCHAR (50) NOT NULL,
-    subject_id INT NOT NULL,
     PRIMARY KEY (set_id),
-    FOREIGN KEY (folder_id) REFERENCES folder (folder_id),
-    FOREIGN KEY (subject_id) REFERENCES subject (subject_id)
+    FOREIGN KEY (folder_id) REFERENCES folder (folder_id)
 );
 
 CREATE TABLE flashcard (
@@ -91,7 +89,7 @@ INSERT INTO question ( quiz_id, question, good_answer, bad_answer1, bad_answer2,
 
 INSERT INTO folder ( folder ) VALUES ('Science');
 
-INSERT INTO learn_set ( folder_id, learn_set, subject_id) VALUES (1, 'Science Set', 1);
+INSERT INTO learn_set ( folder_id, learn_set) VALUES (1, 'Science Set');
 
 INSERT INTO flashcard ( subject_id, set_id, client_id, term, definition) VALUES ( 1, 1, 1, 'Atom', 'The basic building block for all matter in the universe');
 
