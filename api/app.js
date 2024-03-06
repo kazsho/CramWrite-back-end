@@ -6,6 +6,8 @@ const flashcardRouter = require('./routers/flashcard');
 const clientRouter = require('./routers/client');
 const folderRouter = require('./routers/folder');
 const subjectRouter = require('./routers/subject');
+const setRouter = require('./routers/set');
+const questionRouter = require('./routers/question')
 
 const app = express();
 app.use(cors());
@@ -20,5 +22,7 @@ app.use("/flashcards", flashcardRouter)
 app.use("/client", clientRouter)
 app.use("/folder", folderRouter)
 app.use("/subject", subjectRouter)
+app.use("/set", setRouter)
+app.use("/question", questionRouter)
 
 module.exports = app;
