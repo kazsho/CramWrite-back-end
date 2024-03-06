@@ -92,3 +92,5 @@ INSERT INTO folder ( folder ) VALUES ('Science');
 INSERT INTO learn_set ( folder_id, learn_set) VALUES (1, 'Science Set');
 
 INSERT INTO flashcard ( subject_id, set_id, client_id, term, definition) VALUES ( 1, 1, 1, 'Atom', 'The basic building block for all matter in the universe');
+
+INSERT INTO token ( client_id, token) VALUES (1, 'b0036e07-d0b4-4a34-8b32-58f889d75598');

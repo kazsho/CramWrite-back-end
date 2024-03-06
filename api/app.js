@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const logger = require('./middleware/logger.js');
+const authenticator = require('./middleware/authenticator.js');
 
 const flashcardRouter = require('./routers/flashcard');
 const clientRouter = require('./routers/client');
@@ -18,11 +19,11 @@ app.get("/", (req, res) => {
   res.send("Welcome to the CramRight API! Check out our flashcards.");
 });
 
-app.use("/flashcards", flashcardRouter)
+app.use("/flashcards", authenticator, flashcardRouter)
 app.use("/client", clientRouter)
-app.use("/folder", folderRouter)
-app.use("/subject", subjectRouter)
-app.use("/set", setRouter)
-app.use("/question", questionRouter)
+app.use("/folder", authenticator, folderRouter)
+app.use("/subject", authenticator, subjectRouter)
+app.use("/set", authenticator, setRouter)
+app.use("/question", authenticator, questionRouter)
 
 module.exports = app;
