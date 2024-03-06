@@ -62,6 +62,28 @@ async function destroy (req, res) {
     }
 }
 
+async function showAllSets(req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const subject = await Subject.getOneById(id);
+        const sets = await subject.getSets();
+        res.status(200).json(sets);
+    } catch (err) {
+        res.status(404).json({"error": err.message})
+    }
+}
+
+async function showAllQuiz(req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const subject = await Subject.getOneById(id);
+        const quiz = await subject.getQuiz();
+        res.status(200).json(quiz);
+    } catch (err) {
+        res.status(404).json({"error": err.message})
+    }
+}
+
 module.exports = {
-    index, show, create, update, showClient, destroy
+    index, show, create, update, showClient, destroy, showAllSets, showAllQuiz
 }

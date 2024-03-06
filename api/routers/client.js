@@ -7,6 +7,7 @@ const Client = require("../models/Client.js");
 
 const clientRouter = Router();
 
+
 clientRouter.get("/", authenticator, clientController.index);
 clientRouter.post("/register", clientController.register);
 clientRouter.post("/login", clientController.login);
@@ -15,6 +16,8 @@ clientRouter.get("/:id/teacher", clientController.checkTeacher)
 clientRouter.patch("/:id", authenticator, clientController.update);
 clientRouter.delete("/:id", authenticator, clientController.destroy);
 clientRouter.get("/token/:token", clientController.showToken);
+clientRouter.get("/:id/flashcard", authenticator, clientController.showAllFlashcards);
+clientRouter.get("/:id/subject", authenticator, clientController.showAllSubjects);
 
 
 module.exports = clientRouter;

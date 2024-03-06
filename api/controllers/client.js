@@ -96,6 +96,28 @@ async function checkTeacher (req, res) {
     }
 }
 
+async function showAllFlashcards(req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const client = await Client.getOneById(id);
+        const flashcards = await client.getFlashcards();
+        res.status(200).json(flashcards);
+    } catch (err) {
+        res.status(404).json({"error": err.message})
+    }
+}
+
+async function showAllSubjects(req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const client = await Client.getOneById(id);
+        const subjects = await client.getSubjects();
+        res.status(200).json(subjects);
+    } catch (err) {
+        res.status(404).json({"error": err.message})
+    }
+}
+
 module.exports = {
-    index, show, register, update, destroy, checkTeacher, login, showToken
+    index, show, register, update, destroy, checkTeacher, login, showToken, showAllFlashcards, showAllSubjects
 }

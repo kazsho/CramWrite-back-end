@@ -7,6 +7,7 @@ const flashcardRouter = require('./routers/flashcard');
 const clientRouter = require('./routers/client');
 const folderRouter = require('./routers/folder');
 const subjectRouter = require('./routers/subject');
+const quizRouter = require('./routers/quiz');
 const setRouter = require('./routers/set');
 const questionRouter = require('./routers/question')
 
@@ -25,5 +26,6 @@ app.use("/folder", authenticator, folderRouter)
 app.use("/subject", authenticator, subjectRouter)
 app.use("/set", authenticator, setRouter)
 app.use("/question", authenticator, questionRouter)
+app.use("/quiz", authenticator, quizRouter)
 
 module.exports = app;

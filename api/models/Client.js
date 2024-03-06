@@ -1,4 +1,6 @@
 const db = require("../database/connect");
+const Flashcard = require("./flashcard");
+const Subject = require("./subject");
 
 class Client {
     constructor ({ client_id, client, is_teacher, username, password }) {
@@ -7,8 +9,9 @@ class Client {
         this.teacher = is_teacher;
         this.username = username;
         this.password = password;
+    }
         
-}
+
 
 static async getAll() {
     const response = await db.query("SELECT client_id, client, is_teacher, username, password  FROM client ORDER BY client_id;");
@@ -40,7 +43,8 @@ static async create(body) {
 
 async update(body) {
     const {client, teacher, username, password} = body;
-    if (!client || !teacher || !username || !password) {
+
+    if (!client || (!teacher && teacher !== false) || !username || !password) {
         throw new Error("Missing Data!");
     };
     const response = await db.query('UPDATE client SET client = $1, is_teacher = $2, username = $3, password = $4 WHERE client_id = $5 RETURNING *;', [client, teacher, username, password, this.id]);
@@ -52,10 +56,20 @@ async destroy() {
     return new Client(response.rows[0]);
 }
 
+
 async checkTeacher() {
     return this.teacher;
 }
 
+async getFlashcards() {
+    const response = await Flashcard.getByClientId(this.id)
+    return response;
+}
+
+async getSubjects() {
+    const response = await Subject.getByClientId(this.id)
+    return response;
+}
 
 }
 

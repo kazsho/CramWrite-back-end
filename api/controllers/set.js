@@ -29,6 +29,16 @@ async function showFolder (req, res) {
     }
 }
 
+async function showSubject (req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const sets = await Set.getBySubjectId(id);
+        res.status(200).json(sets);
+    } catch (err) {
+        res.status(404).json({"error": err.message})
+    }
+}
+
 async function showAllFlashcards(req, res) {
     try {
         const id = parseInt(req.params.id);
@@ -72,5 +82,5 @@ async function destroy (req, res) {
 }
 
 module.exports = {
-    index, show, create, update, destroy, showFolder, showAllFlashcards
+    index, show, create, update, destroy, showFolder, showSubject, showAllFlashcards
 }
