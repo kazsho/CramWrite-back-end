@@ -1,4 +1,5 @@
 const db = require("../database/connect");
+const Set = require("./set");
 
 class Folder {
     constructor ({ folder_id, folder }) {
@@ -41,6 +42,10 @@ async destroy() {
     return new Folder(response.rows[0]);
 }
 
+async getSets() {
+    const response = await Set.getByFolderId(this.id);
+    return response
+}
 
 }
 

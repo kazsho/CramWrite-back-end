@@ -1,4 +1,6 @@
 const db = require("../database/connect");
+const Set = require("./set");
+const Quiz = require("./quiz");
 
 class Subject {
     constructor ({ subject_id, client_id, subject }) {
@@ -49,6 +51,16 @@ class Subject {
     async destroy() {
         const response = await db.query("DELETE FROM subject WHERE subject_id = $1 RETURNING *;", [this.id]);
         return new Subject(response.rows[0]);
+    }
+
+    async getSets() {
+        const response = await Set.getBySubjectId(this.id)
+        return response;
+    }
+
+    async getQuiz() {
+        const response = await Quiz.getBySubjectId(this.id)
+        return response;
     }
 
 }
