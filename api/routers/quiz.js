@@ -9,6 +9,7 @@ quizRouter.get("/", quizController.index);
 quizRouter.post("/", quizController.create);
 quizRouter.get("/:id", quizController.show);
 quizRouter.get("/subject/:id", quizController.showSubject);
+quizRouter.get("/question/:id", quizController.showQuestion);
 quizRouter.patch("/:id", quizController.update);
 quizRouter.delete("/:id", quizController.destroy);
 

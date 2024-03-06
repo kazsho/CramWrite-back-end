@@ -62,6 +62,16 @@ async function destroy (req, res) {
     }
 }
 
+async function showQuestion (req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const quiz = await Quiz.getByQuestionId(id);
+        res.status(200).json(subject)
+    } catch (err) {
+        res.status(404).json({"error": err.message});
+    }
+}
+
 module.exports = {
-    index, show, create, update, showSubject, destroy
+    index, show, create, update, showSubject, destroy, showQuestion
 }

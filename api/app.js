@@ -7,6 +7,8 @@ const clientRouter = require('./routers/client');
 const folderRouter = require('./routers/folder');
 const subjectRouter = require('./routers/subject');
 const quizRouter = require('./routers/quiz');
+const setRouter = require('./routers/set');
+const questionRouter = require('./routers/question')
 
 const app = express();
 app.use(cors());
@@ -22,5 +24,7 @@ app.use("/client", clientRouter)
 app.use("/folder", folderRouter)
 app.use("/subject", subjectRouter)
 app.use("/quiz", quizRouter)
+app.use("/set", setRouter)
+app.use("/question", questionRouter)
 
 module.exports = app;
