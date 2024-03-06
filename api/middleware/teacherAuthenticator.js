@@ -10,8 +10,9 @@ async function teacherAuthenticator(req, res, next) {
         } else {
             const validToken = await Token.getOneByToken(userToken);
 
-            const client = await Client.getOneById(validToken.user_id);
-            if(!client.checkTeacher()) {
+            const client = await Client.getOneById(validToken.client);
+            
+            if(!(await client.checkTeacher())) {
                 throw new Error("User not a teacher.");
             }
 
