@@ -1,4 +1,6 @@
 const db = require("../database/connect");
+const Question = require("./question");
+
 
 class Quiz {
     constructor ({ quiz_id, subject_id, quiz_name, quiz_description }) {
@@ -52,12 +54,9 @@ class Quiz {
         return new Quiz(response.rows[0]);
     }
 
-    async getByQuestionId(id) {
-        const response = await db.query( "SELECT quiz_id, subject_id, quiz_name, quiz_description FROM quiz WHERE question_id = $1;", [id]);
-        if (response.rows.length == 0) {
-            throw new Error ("Unable to find quiz.");
-        };
-        return response.rows.map (g => new Quiz(g));
+    async getQuestions() {
+        const response = await Question.getByQuizId(this.id);
+        return response
     }
 
 }

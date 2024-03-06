@@ -53,6 +53,17 @@ async function destroy (req, res) {
     }
 }
 
+async function showAllSets (req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const folder = await Folder.getOneById(id);
+        const sets = await folder.getSets();
+        res.status(200).json(sets)
+    } catch (err) {
+        res.status(404).json({"error": err.message});
+    }
+}
+
 module.exports = {
-    index, show, create, update, destroy
+    index, show, create, update, destroy, showAllSets
 }

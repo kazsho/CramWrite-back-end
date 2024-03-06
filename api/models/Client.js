@@ -1,4 +1,6 @@
 const db = require("../database/connect");
+const Flashcard = require("./flashcard");
+const Subject = require("./subject");
 
 class Client {
     constructor ({ client_id, client, is_teacher, username, password }) {
@@ -43,6 +45,16 @@ async update(body) {
 async destroy() {
     const response = await db.query("DELETE FROM client WHERE client_id = $1 RETURNING *;", [this.id]);
     return new Client(response.rows[0]);
+}
+
+async getFlashcards() {
+    const response = await Flashcard.getByClientId(this.id)
+    return response;
+}
+
+async getSubjects() {
+    const response = await Subject.getByClientId(this.id)
+    return response;
 }
 
 

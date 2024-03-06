@@ -62,16 +62,19 @@ async function destroy (req, res) {
     }
 }
 
-async function showQuestion (req, res) {
+async function showAllQuestions (req, res) {
     try {
         const id = parseInt(req.params.id);
-        const quiz = await Quiz.getByQuestionId(id);
-        res.status(200).json(subject)
+        const quiz = await Quiz.getOneById(id);
+        const questions = await quiz.getQuestions();
+        res.status(200).json(questions)
     } catch (err) {
         res.status(404).json({"error": err.message});
     }
 }
 
+
+
 module.exports = {
-    index, show, create, update, showSubject, destroy, showQuestion
+    index, show, create, update, showSubject, destroy, showAllQuestions
 }

@@ -8,6 +8,7 @@ setRouter.get("/", setController.index);
 setRouter.post("/", setController.create);
 setRouter.get("/:id", setController.show);
 setRouter.get("/folder/:id", setController.showFolder);
+setRouter.get("/subject/:id", setController.showSubject);
 setRouter.get("/:id/flashcard", setController.showAllFlashcards)
 setRouter.patch("/:id", setController.update);
 setRouter.delete("/:id", setController.destroy);

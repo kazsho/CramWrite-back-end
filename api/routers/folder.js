@@ -8,6 +8,7 @@ const folderRouter = Router();
 folderRouter.get("/", folderController.index);
 folderRouter.post("/", folderController.create);
 folderRouter.get("/:id", folderController.show);
+folderRouter.get("/:id/set", folderController.showAllSets);
 folderRouter.patch("/:id", folderController.update);
 folderRouter.delete("/:id", folderController.destroy);
 
