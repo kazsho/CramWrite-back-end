@@ -1,4 +1,6 @@
 const db = require("../database/connect");
+const Flashcard = require("./flashcard");
+const Subject = require("./subject");
 
 class Client {
     constructor ({ client_id, client, is_teacher, username, password }) {
@@ -24,24 +26,35 @@ static async getOneById(id) {
 }
 
 static async create(body) {
-    const {client, is_teacher, username, password} = body;
-    const response = await db.query('INSERT INTO client (client, is_teacher, username, password) VALUES ($1, $2, $3, $4) RETURNING *;', [client, is_teacher, username, password]);
+    const {client, teacher, username, password} = body;
+    const response = await db.query('INSERT INTO client (client, is_teacher, username, password) VALUES ($1, $2, $3, $4) RETURNING *;', [client, teacher, username, password]);
 
     return new Client(response.rows[0]);
 }
 
 async update(body) {
-    const {client, is_teacher, username, password} = body;
-    if (!client || !is_teacher || !username || !password) {
+    const {client, teacher, username, password} = body;
+    console.log(teacher)
+    if (!client || (!teacher && teacher !== false) || !username || !password) {
         throw new Error("Missing Data!");
     };
-    const response = await db.query('UPDATE client SET client = $1, is_teacher = $2, username = $3, password = $4 WHERE client_id = $5 RETURNING *;', [client, is_teacher, username, password, this.id]);
+    const response = await db.query('UPDATE client SET client = $1, is_teacher = $2, username = $3, password = $4 WHERE client_id = $5 RETURNING *;', [client, teacher, username, password, this.id]);
     return new Client(response.rows[0]);
 }
 
 async destroy() {
     const response = await db.query("DELETE FROM client WHERE client_id = $1 RETURNING *;", [this.id]);
     return new Client(response.rows[0]);
+}
+
+async getFlashcards() {
+    const response = await Flashcard.getByClientId(this.id)
+    return response;
+}
+
+async getSubjects() {
+    const response = await Subject.getByClientId(this.id)
+    return response;
 }
 
 
