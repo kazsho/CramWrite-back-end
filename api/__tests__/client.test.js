@@ -22,11 +22,10 @@ describe('User Endpoints', () => {
     })
 
     it('GET /client should show all users', (done) => {
-        const response = request(api).get('/client').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598").expect(done);
+        const response = request(api).get('/client').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598").expect(200, done);
 
         console.log(response);
 
-        expect(response.statusCode).toEqual(200);
         expect(response.type).toEqual(expect.stringContaining('json'));
         response.body.forEach((e) => {
             expect(e).toHaveProperty('id');
