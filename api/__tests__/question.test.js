@@ -86,7 +86,7 @@ describe('Question Endpoints', () => {
         expect(response.body.question).toEqual(payload.question);
     });
 
-    it('DELETE /question/1 should delete a question', async () => {
+    it('DELETE /question/2 should delete a question', async () => {
         const payload = {"quiz": 1, "question": "Test", "good_answer": "Yes", "bad_answer1": "No1", "bad_answer2": "No2", "bad_answer3": "No3"};
         await request(api).post('/question').send(payload).set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
         const response = await request(api).delete('/question/2').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
