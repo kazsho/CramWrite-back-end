@@ -61,6 +61,65 @@ describe('Flashcard Endpoints', () => {
         expect(response.body).toHaveProperty('term');
         expect(response.body).toHaveProperty('definition');
         expect(response.body).toHaveProperty('colour');
-        expect(response.body).toEqual(1);
-    })
+        expect(response.body.id).toEqual(1);
+    });
+
+    it('GET /flashcards/client/1 should get all flashcards related to a certain client', async () => {
+        const response = await request(api).get('/flashcards/client/1').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+        expect(response.type).toEqual(expect.stringContaining('json'));
+        response.body.forEach((e) => {
+            expect(e).toHaveProperty('id');
+            expect(e).toHaveProperty('subject');
+            expect(e).toHaveProperty('set');
+            expect(e).toHaveProperty('client');
+            expect(e).toHaveProperty('term');
+            expect(e).toHaveProperty('definition');
+            expect(e).toHaveProperty('colour');
+        });
+    });
+
+    it('GET /flashcards/subject/1 should get all flashcards related to a certain subject', async () => {
+        const response = await request(api).get('/flashcards/subject/1').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+        expect(response.type).toEqual(expect.stringContaining('json'));
+        response.body.forEach((e) => {
+            expect(e).toHaveProperty('id');
+            expect(e).toHaveProperty('subject');
+            expect(e).toHaveProperty('set');
+            expect(e).toHaveProperty('client');
+            expect(e).toHaveProperty('term');
+            expect(e).toHaveProperty('definition');
+            expect(e).toHaveProperty('colour');
+        });
+    });
+
+    it('PATCH /flashcards/1 should update the flashcard at id 1', async () => {
+        const payload = {"subject": 1, "set": 1, "term": "Electron", "definition": "The basic building block for all matter in the universe", "colour": "#808080"};
+        await request(api).patch('/flashcards/1').send(payload).set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+        const response = await request(api).get('/flashcards/1').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+
+        expect(response.body.term).toEqual(payload.term);
+    });
+
+    it('DELETE /flashcards/2 should delete the flashcard at id 2', async () => {
+        const payload = {"subject": 1, "set": 1, "client": 1, "term": "Proton", "definition": "Positively Charged", "colour": "#000000"};
+        await request(api).post('/flashcards').send(payload).set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+        const response = await request(api).delete('/flashcards/2').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+
+        expect(response.status).toEqual(204);
+    });
+
+    it('GET /flashcards/learn_set/1 should get all flashcards related to a certain learn set', async () => {
+        const response = await request(api).get('/flashcards/subject/1').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+        expect(response.type).toEqual(expect.stringContaining('json'));
+        response.body.forEach((e) => {
+            expect(e).toHaveProperty('id');
+            expect(e).toHaveProperty('subject');
+            expect(e).toHaveProperty('set');
+            expect(e).toHaveProperty('client');
+            expect(e).toHaveProperty('term');
+            expect(e).toHaveProperty('definition');
+            expect(e).toHaveProperty('colour');
+        });
+    });
+    
 });
