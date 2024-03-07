@@ -12,7 +12,7 @@ const resetTestDB = () => {
                 connectionString: process.env.DB_TEST_URL
             });
             await db.query(reset).catch(err => console.log(err))
-            db.end()
+            db.end();
             resolve('Test DB Reset');
         } catch (err) {
             reject('Could not reset TestDB');
