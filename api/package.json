@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "nodemon -L index.js",
     "setup-db": "node ./database/setup.js",
-    "test": "jest --testTimeout=10000 --detectOpenHandles --verbose --forceExit",
+    "test": "jest --testTimeout=10000 --detectOpenHandles --forceExit",
     "coverage": "jest --coverage --testTimeout=10000 --forceExit"
   },
   "dependencies": {
