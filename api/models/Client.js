@@ -14,7 +14,7 @@ class Client {
 
 
 static async getAll() {
-    const response = await db.query("SELECT client_id, client, is_teacher, username, password  FROM client ORDER BY client_id;");
+    const response = await db.query("SELECT * FROM client;");
     return response.rows.map(g => new Client(g));
 }
 

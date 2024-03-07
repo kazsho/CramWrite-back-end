@@ -15,7 +15,7 @@ class Set {
     }
 
     static async getOneById(id) {
-        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id WHERE set_id = $1;", [id]);
+        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id FROM learn_set WHERE set_id = $1;", [id]);
         if (response.rows.length != 1) {
             throw new Error("Unable to find learn set.");
         };
@@ -23,7 +23,7 @@ class Set {
     }
 
     static async getByFolderId(id) {
-        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id WHERE folder_id = $1;", [id]);
+        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id FROM learn_set WHERE folder_id = $1;", [id]);
         if (response.rows.length == 0) {
             throw new Error("Unable to find learn sets.");
         };

@@ -11,6 +11,7 @@ const resetTestDB = () => {
             const db = new Pool({
                 connectionString: process.env.DB_TEST_URL
             });
+            console.log(db);
             await db.query(reset);
             resolve('Test DB Reset');
         } catch (err) {

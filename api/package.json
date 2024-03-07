@@ -2,8 +2,8 @@
   "scripts": {
     "dev": "nodemon -L index.js",
     "setup-db": "node ./database/setup.js",
-    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
-    "coverage": "cross-env NODE_ENV=test jest --coverage --testTimeout=10000"
+    "test": "jest --testTimeout=10000 --detectOpenHandles --verbose",
+    "coverage": "jest --coverage --testTimeout=10000"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

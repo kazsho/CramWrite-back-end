@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.94% </span>
+                <span class="strong">17.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/17</span>
+                <span class='fraction'>3/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.94% </span>
+                <span class="strong">17.64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/17</span>
+                <span class='fraction'>3/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -104,9 +104,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,11 +125,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,10 +138,10 @@
 const db = require("../database/connect");
 &nbsp;
 class Token {
-    constructor({ token_id, client_id, token }) {
-        this.token_id = token_id;
-        this.client = client_id;
-        this.token = token;
+<span class="fstat-no" title="function not covered" >    co</span>nstructor({ token_id, client_id, token }) {
+<span class="cstat-no" title="statement not covered" >        this.token_id = token_id;</span>
+<span class="cstat-no" title="statement not covered" >        this.client = client_id;</span>
+<span class="cstat-no" title="statement not covered" >        this.token = token;</span>
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    st</span>atic async create(client_id) {
@@ -159,12 +159,12 @@ class Token {
 <span class="cstat-no" title="statement not covered" >        return new Token(response.rows[0]);</span>
     }
 &nbsp;
-    static async getOneByToken(token) {
-        const response = await db.query("SELECT * FROM token WHERE token = $1;", [token]);
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (response.rows.length != 1) {
+<span class="fstat-no" title="function not covered" >    st</span>atic async getOneByToken(token) {
+        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT * FROM token WHERE token = $1;", [token]);</span>
+<span class="cstat-no" title="statement not covered" >        if (response.rows.length != 1) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error("Unable to locate token.");</span>
         }
-        return new Token(response.rows[0]);
+<span class="cstat-no" title="statement not covered" >        return new Token(response.rows[0]);</span>
     }
 }
 &nbsp;
@@ -175,7 +175,7 @@ module.exports = Token;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-06T13:33:14.934Z
+                at 2024-03-06T17:10:16.910Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
