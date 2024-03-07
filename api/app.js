@@ -14,7 +14,7 @@ const questionRouter = require('./routers/question')
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(logger)
+if(process.env.NODE_ENV !== "test") app.use(logger)
 
 app.get("/", (req, res) => {
   res.send("Welcome to the CramRight API! Check out our flashcards.");
