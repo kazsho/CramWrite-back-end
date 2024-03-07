@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.12% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/33</span>
+                <span class='fraction'>11/33</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">12.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>1/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">27.27% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>3/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.9% </span>
+                <span class="strong">32.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/31</span>
+                <span class='fraction'>10/31</span>
             </div>
         
             
@@ -132,15 +132,15 @@
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -174,17 +174,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -198,18 +193,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const db = require("../database/connect");
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const db = require("../database/connect");
 const Set = require("./set");
 const Quiz = require("./quiz");
 &nbsp;
 class Subject {
-<span class="fstat-no" title="function not covered" >    co</span>nstructor ({ subject_id, client_id, subject }) {
-<span class="cstat-no" title="statement not covered" >        this.id = subject_id;</span>
-<span class="cstat-no" title="statement not covered" >        this.client = client_id;</span>
-<span class="cstat-no" title="statement not covered" >        this.subject = subject;</span>
+    constructor ({ subject_id, client_id, subject }) {
+        this.id = subject_id;
+        this.client = client_id;
+        this.subject = subject;
        
     }
 &nbsp;
@@ -242,12 +242,12 @@ class Subject {
 <span class="cstat-no" title="statement not covered" >        return new Subject(response.rows[0]);</span>
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    st</span>atic async getByClientId(id) {
-        const response = <span class="cstat-no" title="statement not covered" >await db.query( "SELECT subject_id, client_id, subject FROM subject WHERE client_id = $1;", [id]);</span>
-<span class="cstat-no" title="statement not covered" >        if (response.rows.length == 0) {</span>
+    static async getByClientId(id) {
+        const response = await db.query( "SELECT subject_id, client_id, subject FROM subject WHERE client_id = $1;", [id]);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (response.rows.length == 0) {
 <span class="cstat-no" title="statement not covered" >            throw new Error ("Unable to find subjects.");</span>
         };
-<span class="cstat-no" title="statement not covered" >        return response.rows.map (<span class="fstat-no" title="function not covered" >g </span>=&gt; <span class="cstat-no" title="statement not covered" >new Subject(g))</span>;</span>
+        return response.rows.map (g =&gt; new Subject(g));
     }
 &nbsp;
 &nbsp;
@@ -277,7 +277,7 @@ module.exports = Subject;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-07T10:47:14.882Z
+                at 2024-03-07T16:08:48.732Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

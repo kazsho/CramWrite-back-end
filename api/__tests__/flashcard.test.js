@@ -121,5 +121,5 @@ describe('Flashcard Endpoints', () => {
             expect(e).toHaveProperty('colour');
         });
     });
-    
+
 });

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">8.1% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/36</span>
+                <span class='fraction'>3/37</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.09% </span>
+                <span class="strong">8.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/33</span>
+                <span class='fraction'>3/34</span>
             </div>
         
             
@@ -132,8 +132,9 @@
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -141,18 +142,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,6 +169,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,24 +203,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const db = require("../database/connect");
+<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const db = require("../database/connect");
 const Flashcard = require("./flashcard");
 &nbsp;
 class Set {
-<span class="fstat-no" title="function not covered" >    co</span>nstructor ({ set_id, folder_id, learn_set, subject_id }) {
+<span class="fstat-no" title="function not covered" >    co</span>nstructor ({ set_id, folder_id, learn_set, subject_id, colour }) {
 <span class="cstat-no" title="statement not covered" >        this.id = set_id;</span>
 <span class="cstat-no" title="statement not covered" >        this.folder = folder_id;</span>
 <span class="cstat-no" title="statement not covered" >        this.set = learn_set;</span>
-<span class="cstat-no" title="statement not covered" >        this.subject = subject_id</span>
+<span class="cstat-no" title="statement not covered" >        this.subject = subject_id;</span>
+<span class="cstat-no" title="statement not covered" >        this.colour = colour;</span>
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    st</span>atic async getAll() {
-        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT set_id, folder_id, learn_set, subject_id FROM learn_set ORDER BY set_id;");</span>
+        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT set_id, folder_id, learn_set, subject_id, colour FROM learn_set ORDER BY set_id;");</span>
 <span class="cstat-no" title="statement not covered" >        return response.rows.map(<span class="fstat-no" title="function not covered" >g </span>=&gt; <span class="cstat-no" title="statement not covered" >new Set(g))</span>;</span>
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    st</span>atic async getOneById(id) {
-        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT set_id, folder_id, learn_set, subject_id FROM learn_set WHERE set_id = $1;", [id]);</span>
+        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT set_id, folder_id, learn_set, subject_id, colour FROM learn_set WHERE set_id = $1;", [id]);</span>
 <span class="cstat-no" title="statement not covered" >        if (response.rows.length != 1) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error("Unable to find learn set.");</span>
         };
@@ -226,7 +229,7 @@ class Set {
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    st</span>atic async getByFolderId(id) {
-        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT set_id, folder_id, learn_set, subject_id FROM learn_set WHERE folder_id = $1;", [id]);</span>
+        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT set_id, folder_id, learn_set, subject_id, colour FROM learn_set WHERE folder_id = $1;", [id]);</span>
 <span class="cstat-no" title="statement not covered" >        if (response.rows.length == 0) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error("Unable to find learn sets.");</span>
         };
@@ -234,7 +237,7 @@ class Set {
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    st</span>atic async getBySubjectId(id) {
-        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT set_id, folder_id, learn_set, subject_id FROM learn_set WHERE subject_id = $1;", [id]);</span>
+        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT set_id, folder_id, learn_set, subject_id, colour FROM learn_set WHERE subject_id = $1;", [id]);</span>
 <span class="cstat-no" title="statement not covered" >        if (response.rows.length == 0) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error("Unable to find learn sets.");</span>
         };
@@ -249,11 +252,11 @@ class Set {
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    as</span>ync update(body) {
-        const {folder, set, subject} = <span class="cstat-no" title="statement not covered" >body;</span>
-<span class="cstat-no" title="statement not covered" >        if (!folder || !set || !subject) {</span>
+        const {folder, set, subject, colour} = <span class="cstat-no" title="statement not covered" >body;</span>
+<span class="cstat-no" title="statement not covered" >        if (!folder || !set || !subject || !colour) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error("Missing Data!");</span>
         };
-        const response = <span class="cstat-no" title="statement not covered" >await db.query('UPDATE learn_set SET folder_id = $1, learn_set = $2, subject_id = $3 WHERE set_id = $4 RETURNING *;', [folder, set, subject, this.id]);</span>
+        const response = <span class="cstat-no" title="statement not covered" >await db.query('UPDATE learn_set SET folder_id = $1, learn_set = $2, subject_id = $3, colour = $4 WHERE set_id = $5 RETURNING *;', [folder, set, subject, colour, this.id]);</span>
 <span class="cstat-no" title="statement not covered" >        return new Set(response.rows[0]);</span>
     }
 &nbsp;
@@ -277,7 +280,7 @@ module.exports = Set;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-07T10:47:14.882Z
+                at 2024-03-07T16:08:48.732Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

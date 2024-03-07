@@ -54,7 +54,7 @@ CREATE TABLE learn_set (
     folder_id INT,
     learn_set VARCHAR (50) NOT NULL,
     subject_id INT NOT NULL,
-    colour VARCHAR (50) DEFAULT '#808080',
+    colour VARCHAR (50) DEFAULT '#BDE1C3',
     PRIMARY KEY (set_id),
     FOREIGN KEY (folder_id) REFERENCES folder (folder_id),
     FOREIGN KEY (subject_id) REFERENCES subject (subject_id)
@@ -93,6 +93,7 @@ INSERT INTO question ( quiz_id, question, good_answer, bad_answer1, bad_answer2,
 INSERT INTO folder ( folder ) VALUES ('Science');
 
 INSERT INTO learn_set ( folder_id, learn_set, subject_id) VALUES (1, 'Science Set', 1);
+INSERT INTO learn_set ( folder_id, learn_set, subject_id, colour) VALUES (1, 'History Set', 1, '#000000');
 
 INSERT INTO flashcard ( subject_id, set_id, client_id, term, definition) VALUES ( 1, 1, 1, 'Atom', 'The basic building block for all matter in the universe');
 

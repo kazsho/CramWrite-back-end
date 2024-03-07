@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.67% </span>
+                <span class="strong">38.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/31</span>
+                <span class='fraction'>12/31</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>4/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10.34% </span>
+                <span class="strong">37.93% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/29</span>
+                <span class='fraction'>11/29</span>
             </div>
         
             
@@ -128,22 +128,22 @@
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,8 +155,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -193,22 +193,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const db = require("../database/connect");
+<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const db = require("../database/connect");
 const Question = require("./question");
 &nbsp;
 &nbsp;
 class Quiz {
-<span class="fstat-no" title="function not covered" >    co</span>nstructor ({ quiz_id, subject_id, quiz_name, quiz_description }) {
-<span class="cstat-no" title="statement not covered" >        this.id = quiz_id;</span>
-<span class="cstat-no" title="statement not covered" >        this.subject = subject_id;</span>
-<span class="cstat-no" title="statement not covered" >        this.name = quiz_name;</span>
-<span class="cstat-no" title="statement not covered" >        this.description = quiz_description</span>
+    constructor ({ quiz_id, subject_id, quiz_name, quiz_description }) {
+        this.id = quiz_id;
+        this.subject = subject_id;
+        this.name = quiz_name;
+        this.description = quiz_description
        
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    st</span>atic async getAll() {
-        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT quiz_id, subject_id, quiz_name, quiz_description FROM quiz ORDER BY quiz_id;");</span>
-<span class="cstat-no" title="statement not covered" >        return response.rows.map(<span class="fstat-no" title="function not covered" >g </span>=&gt; <span class="cstat-no" title="statement not covered" >new Quiz(g))</span>;</span>
+    static async getAll() {
+        const response = await db.query("SELECT quiz_id, subject_id, quiz_name, quiz_description FROM quiz ORDER BY quiz_id;");
+        return response.rows.map(g =&gt; new Quiz(g));
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    st</span>atic async getOneById(id) {
@@ -219,9 +219,9 @@ class Quiz {
 <span class="cstat-no" title="statement not covered" >        return new Quiz(response.rows[0]);</span>
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    st</span>atic async create(body) {
-        const {subject, name, description} = <span class="cstat-no" title="statement not covered" >body;</span>
-        const response = <span class="cstat-no" title="statement not covered" >await db.query('INSERT INTO quiz (subject_id, quiz_name, quiz_description) VALUES ($1, $2, $3) RETURNING *;', [subject, name, description]);</span>
+    static async create(body) {
+        const {subject, name, description} = body;
+        const response = await db.query('INSERT INTO quiz (subject_id, quiz_name, quiz_description) VALUES ($1, $2, $3) RETURNING *;', [subject, name, description]);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        return new Quiz(response.rows[0]);</span>
     }
@@ -265,7 +265,7 @@ module.exports = Quiz;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-07T10:47:14.882Z
+                at 2024-03-07T16:08:48.732Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
