@@ -54,27 +54,25 @@ describe('Client Endpoints', () => {
         expect(typeof(response.body)).toEqual("boolean");
     });
 
-    // it('POST /client/register should create a new user', async () => {
-    //     const payload = {"client": "Cem", "teacher": false, "username": "Gen10", "password": "1234"};;
-    //     await request(api).post('/client/register').send(payload);
-    //     const response2 = await request(api).get('/client').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
-    //     const authenticated = await bcrypt.compare(payload.password, response2.body[1].password);
+    it('POST /client/register should create a new user', async () => {
+        const payload = {"client": "Cem", "teacher": false, "username": "Gen10", "password": "1234"};;
+        await request(api).post('/client/register').send(payload);
+        const response2 = await request(api).get('/client').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+        const authenticated = await bcrypt.compare(payload.password, response2.body[1].password);
 
+        expect(response2.body[1].id).toEqual(2);
+        expect(response2.body[1].client).toEqual(payload.client);
+        expect(response2.body[1].teacher).toEqual(payload.teacher);
+        expect(response2.body[1].username).toEqual(payload.username);
+        expect(authenticated).toEqual(true);
+    });
 
-        
-    //     expect(response2.body[1].id).toEqual(2);
-    //     expect(response2.body[1].client).toEqual(payload.client);
-    //     expect(response2.body[1].teacher).toEqual(payload.teacher);
-    //     expect(response2.body[1].username).toEqual(payload.username);
-    //     expect(authenticated).toEqual(true);
-    // });
+    it('PATCH /client/1 should update the current user', async () => {
+        const payload = {"client": "Henrietta", "teacher": false, "username": 'Henrie91', "password": '$2b$10$kTzybm7/ThVab2bsNoVHZeEeghkj.cuXYxfJHlgJilqh2xnum9XOW'};
+        await request(api).patch('/client/1').send(payload).set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+        const response = await request(api).get('/client/1').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
 
-    // it('PATCH /client/1 should update the current user', async () => {
-    //     const payload = {"client": "Henrietta", "teacher": false, "username": 'Henrie91', "password": '$2b$10$kTzybm7/ThVab2bsNoVHZeEeghkj.cuXYxfJHlgJilqh2xnum9XOW'};
-    //     await request(api).patch('/client/1').send(payload).set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
-    //     const response = await request(api).get('/client/1').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
-
-    //     expect(response.body.teacher).toEqual(payload.teacher);
-    // })
+        expect(response.body.teacher).toEqual(payload.teacher);
+    })
 
 });
