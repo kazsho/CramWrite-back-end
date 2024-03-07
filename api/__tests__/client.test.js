@@ -35,6 +35,7 @@ describe('Client Endpoints', () => {
 
     it('GET /client/:id should show 1 user', async () => {
         const response = await request(api).get('/client/1').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+        console.log(response.body)
 
         expect(response.status).toEqual(200);
         expect(response.type).toEqual(expect.stringContaining('json'));
