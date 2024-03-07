@@ -54,6 +54,7 @@ CREATE TABLE learn_set (
     folder_id INT,
     learn_set VARCHAR (50) NOT NULL,
     subject_id INT NOT NULL,
+    colour VARCHAR (50) DEFAULT '#BDE1C3',
     PRIMARY KEY (set_id),
     FOREIGN KEY (folder_id) REFERENCES folder (folder_id),
     FOREIGN KEY (subject_id) REFERENCES subject (subject_id)
@@ -86,13 +87,29 @@ INSERT INTO client (client, is_teacher, username, password) VALUES ('Henrietta',
 INSERT INTO subject ( client_id, subject) VALUES (1, 'Chemistry');
 
 INSERT INTO quiz ( subject_id, quiz_name, quiz_description) VALUES (1, 'Periodic Table', 'All to know about atomic structure');
+INSERT INTO quiz ( subject_id, quiz_name, quiz_description) VALUES (1, 'World Capitals', 'Capital cities of countries around the world');
+INSERT INTO quiz ( subject_id, quiz_name, quiz_description) VALUES (1, 'Geometry', 'Identify geometric principles');
+INSERT INTO quiz ( subject_id, quiz_name, quiz_description) VALUES (1, 'World History', 'Identify significant historical events');
+INSERT INTO quiz ( subject_id, quiz_name, quiz_description) VALUES (1, 'English Literature', 'Famous authors and their work');
 
 INSERT INTO question ( quiz_id, question, good_answer, bad_answer1, bad_answer2, bad_answer3) VALUES ( 1, 'What is an isotope?', 'same number of protons, different number of neutrons', 'same number of protons and different number of electrons', 'same number of neutrons, different number of electrons', 'same number of protons and neutrons');
+INSERT INTO question ( quiz_id, question, good_answer, bad_answer1, bad_answer2, bad_answer3) VALUES ( 2, 'What is the capital of France?', 'Paris', 'Lagos', 'Cannes', 'Cape Town');
+INSERT INTO question ( quiz_id, question, good_answer, bad_answer1, bad_answer2, bad_answer3) VALUES ( 4, 'Who was Anne Frank?', 'A Jewish girl who wrote a famous diary while hiding from the Nazis during World War II', 'A famous painter from the Renaissance period', 'An astronaut who traveled to the moon in the 1960s', 'A medieval queen known for her military conquests');
+INSERT INTO question ( quiz_id, question, good_answer, bad_answer1, bad_answer2, bad_answer3) VALUES ( 5, 'Which Shakespeare play features the characters Romeo and Juliet?', 'Romeo and Juliet', 'Hamlet', 'Macbeth', 'Othello');
 
 INSERT INTO folder ( folder ) VALUES ('Science');
 
 INSERT INTO learn_set ( folder_id, learn_set, subject_id) VALUES (1, 'Science Set', 1);
+INSERT INTO learn_set ( folder_id, learn_set, subject_id, colour) VALUES (1, 'Geography Set', 1, '#BDE1C3');
+INSERT INTO learn_set ( folder_id, learn_set, subject_id, colour) VALUES (1, 'Maths Set', 1, '#E9DBDB');
+INSERT INTO learn_set ( folder_id, learn_set, subject_id, colour) VALUES (1, 'English Set', 1, '#CCDCE8');
+INSERT INTO learn_set ( folder_id, learn_set, subject_id, colour) VALUES (1, 'History Set', 1, '#E9DBDB');
+INSERT INTO learn_set ( folder_id, learn_set, subject_id, colour) VALUES (1, 'Computer Science Set', 1, '#FFDAB9');
 
 INSERT INTO flashcard ( subject_id, set_id, client_id, term, definition) VALUES ( 1, 1, 1, 'Atom', 'The basic building block for all matter in the universe');
+INSERT INTO flashcard ( subject_id, set_id, client_id, term, definition) VALUES ( 1, 1, 1, 'Hydrocarbons', 'A compound made up of hydrogen and carbon atoms only');
+INSERT INTO flashcard ( subject_id, set_id, client_id, term, definition) VALUES ( 1, 2, 1, 'Stalactite', 'A mineral formation that hangs from the ceiling of caves, typically composed of calcium carbonate minerals');
+INSERT INTO flashcard ( subject_id, set_id, client_id, term, definition) VALUES ( 1, 3, 1, 'Pythagoras Theorem', 'In a right-angled triangle, the square of the length of the hypotenuse is equal to the sum of the squares of the lengths of the other two sides.');
+INSERT INTO flashcard ( subject_id, set_id, client_id, term, definition) VALUES ( 1, 3, 1, 'Interquartile range (IQR)', 'The difference between the third quartile (Q3) and the first quartile (Q1) in a dataset.');
 
 INSERT INTO token ( client_id, token) VALUES (1, 'b0036e07-d0b4-4a34-8b32-58f889d75598');

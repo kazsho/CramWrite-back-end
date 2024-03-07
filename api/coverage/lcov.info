@@ -4,6 +4,7 @@ FN:19,(anonymous_0)
 FNF:1
 FNH:0
 FNDA:0,(anonymous_0)
+<<<<<<< HEAD
 DA:1,4
 DA:2,4
 DA:3,4
@@ -33,6 +34,37 @@ LF:25
 LH:24
 BRDA:17,0,0,0
 BRDA:17,0,1,4
+=======
+DA:1,3
+DA:2,3
+DA:3,3
+DA:4,3
+DA:6,3
+DA:7,3
+DA:8,3
+DA:9,3
+DA:10,3
+DA:11,3
+DA:12,3
+DA:14,3
+DA:15,3
+DA:16,3
+DA:17,3
+DA:19,3
+DA:20,0
+DA:23,3
+DA:24,3
+DA:25,3
+DA:26,3
+DA:27,3
+DA:28,3
+DA:29,3
+DA:31,3
+LF:25
+LH:24
+BRDA:17,0,0,0
+BRDA:17,0,1,3
+>>>>>>> origin/dev
 BRF:2
 BRH:1
 end_of_record
@@ -43,6 +75,7 @@ FN:9,(anonymous_1)
 FN:14,(anonymous_2)
 FNF:3
 FNH:2
+<<<<<<< HEAD
 FNDA:26,(anonymous_0)
 FNDA:26,(anonymous_1)
 FNDA:0,(anonymous_2)
@@ -59,6 +92,24 @@ DA:15,26
 DA:16,26
 DA:18,0
 DA:23,4
+=======
+FNDA:20,(anonymous_0)
+FNDA:20,(anonymous_1)
+FNDA:0,(anonymous_2)
+DA:1,3
+DA:2,3
+DA:4,3
+DA:6,3
+DA:8,3
+DA:9,20
+DA:10,20
+DA:11,20
+DA:14,20
+DA:15,20
+DA:16,20
+DA:18,0
+DA:23,3
+>>>>>>> origin/dev
 LF:13
 LH:12
 BRF:0
@@ -77,20 +128,28 @@ FN:88,checkTeacher
 FN:99,showAllFlashcards
 FN:110,showAllSubjects
 FNF:10
-FNH:5
+FNH:10
 FNDA:2,index
 FNDA:2,show
-FNDA:1,register
-FNDA:0,showToken
-FNDA:0,login
+FNDA:2,register
+FNDA:1,showToken
+FNDA:1,login
 FNDA:1,update
-FNDA:0,destroy
+FNDA:1,destroy
 FNDA:1,checkTeacher
+<<<<<<< HEAD
 FNDA:0,showAllFlashcards
 FNDA:0,showAllSubjects
 DA:1,4
 DA:2,4
 DA:3,4
+=======
+FNDA:1,showAllFlashcards
+FNDA:1,showAllSubjects
+DA:1,3
+DA:2,3
+DA:3,3
+>>>>>>> origin/dev
 DA:6,2
 DA:7,2
 DA:8,2
@@ -100,27 +159,27 @@ DA:16,2
 DA:17,2
 DA:18,2
 DA:20,0
-DA:25,1
-DA:26,1
-DA:27,1
-DA:28,1
-DA:30,1
-DA:31,1
+DA:25,2
+DA:26,2
+DA:27,2
+DA:28,2
+DA:30,2
+DA:31,2
 DA:33,0
-DA:38,0
-DA:39,0
-DA:40,0
-DA:41,0
-DA:43,0
+DA:38,1
+DA:39,1
+DA:40,1
+DA:41,1
+DA:43,1
 DA:45,0
-DA:50,0
-DA:51,0
-DA:52,0
-DA:53,0
-DA:55,0
+DA:50,1
+DA:51,1
+DA:52,1
+DA:53,1
+DA:55,1
 DA:56,0
-DA:58,0
-DA:59,0
+DA:58,1
+DA:59,1
 DA:61,0
 DA:66,1
 DA:67,1
@@ -128,11 +187,11 @@ DA:68,1
 DA:69,1
 DA:70,1
 DA:72,0
-DA:78,0
-DA:79,0
-DA:80,0
-DA:81,0
-DA:82,0
+DA:78,1
+DA:79,1
+DA:80,1
+DA:81,1
+DA:82,1
 DA:84,0
 DA:89,1
 DA:90,1
@@ -140,25 +199,29 @@ DA:91,1
 DA:92,1
 DA:93,1
 DA:95,0
-DA:100,0
-DA:101,0
-DA:102,0
-DA:103,0
-DA:104,0
+DA:100,1
+DA:101,1
+DA:102,1
+DA:103,1
+DA:104,1
 DA:106,0
-DA:111,0
-DA:112,0
-DA:113,0
-DA:114,0
-DA:115,0
+DA:111,1
+DA:112,1
+DA:113,1
+DA:114,1
+DA:115,1
 DA:117,0
+<<<<<<< HEAD
 DA:121,4
+=======
+DA:121,3
+>>>>>>> origin/dev
 LF:65
-LH:27
+LH:54
 BRDA:55,0,0,0
-BRDA:55,0,1,0
+BRDA:55,0,1,1
 BRF:2
-BRH:0
+BRH:1
 end_of_record
 TN:
 SF:controllers/flashcard.js
@@ -171,10 +234,11 @@ FN:52,showClient
 FN:62,showSubject
 FN:72,destroy
 FNF:8
-FNH:0
-FNDA:0,index
-FNDA:0,show
+FNH:7
+FNDA:2,index
+FNDA:2,show
 FNDA:0,showSet
+<<<<<<< HEAD
 FNDA:0,create
 FNDA:0,update
 FNDA:0,showClient
@@ -184,46 +248,61 @@ DA:1,4
 DA:4,0
 DA:5,0
 DA:6,0
+=======
+FNDA:2,create
+FNDA:1,update
+FNDA:1,showClient
+FNDA:2,showSubject
+FNDA:1,destroy
+DA:1,3
+DA:4,2
+DA:5,2
+DA:6,2
+>>>>>>> origin/dev
 DA:8,0
-DA:13,0
-DA:14,0
-DA:15,0
-DA:16,0
+DA:13,2
+DA:14,2
+DA:15,2
+DA:16,2
 DA:18,0
 DA:23,0
 DA:24,0
 DA:25,0
 DA:26,0
 DA:28,0
-DA:33,0
-DA:34,0
-DA:35,0
+DA:33,2
+DA:34,2
+DA:35,2
 DA:37,0
-DA:42,0
-DA:43,0
-DA:44,0
-DA:45,0
-DA:46,0
+DA:42,1
+DA:43,1
+DA:44,1
+DA:45,1
+DA:46,1
 DA:48,0
-DA:53,0
-DA:54,0
-DA:55,0
-DA:56,0
+DA:53,1
+DA:54,1
+DA:55,1
+DA:56,1
 DA:58,0
-DA:63,0
-DA:64,0
-DA:65,0
-DA:66,0
+DA:63,2
+DA:64,2
+DA:65,2
+DA:66,2
 DA:68,0
-DA:73,0
-DA:74,0
-DA:75,0
-DA:76,0
-DA:77,0
+DA:73,1
+DA:74,1
+DA:75,1
+DA:76,1
+DA:77,1
 DA:79,0
+<<<<<<< HEAD
 DA:83,4
+=======
+DA:83,3
+>>>>>>> origin/dev
 LF:42
-LH:2
+LH:30
 BRF:0
 BRH:0
 end_of_record
@@ -236,6 +315,7 @@ FN:33,update
 FN:45,destroy
 FN:56,showAllSets
 FNF:6
+<<<<<<< HEAD
 FNH:6
 FNDA:2,index
 FNDA:2,show
@@ -247,6 +327,19 @@ DA:1,4
 DA:4,2
 DA:5,2
 DA:6,2
+=======
+FNH:0
+FNDA:0,index
+FNDA:0,show
+FNDA:0,create
+FNDA:0,update
+FNDA:0,destroy
+FNDA:0,showAllSets
+DA:1,3
+DA:4,0
+DA:5,0
+DA:6,0
+>>>>>>> origin/dev
 DA:8,0
 DA:13,2
 DA:14,2
@@ -275,7 +368,11 @@ DA:59,1
 DA:60,1
 DA:61,1
 DA:63,0
+<<<<<<< HEAD
 DA:67,4
+=======
+DA:67,3
+>>>>>>> origin/dev
 LF:33
 LH:27
 BRF:0
@@ -290,17 +387,24 @@ FN:32,create
 FN:41,update
 FN:52,destroy
 FNF:6
-FNH:0
-FNDA:0,index
+FNH:1
+FNDA:1,index
 FNDA:0,show
 FNDA:0,showQuiz
 FNDA:0,create
 FNDA:0,update
 FNDA:0,destroy
+<<<<<<< HEAD
 DA:1,4
 DA:4,0
 DA:5,0
 DA:6,0
+=======
+DA:1,3
+DA:4,1
+DA:5,1
+DA:6,1
+>>>>>>> origin/dev
 DA:8,0
 DA:13,0
 DA:14,0
@@ -328,9 +432,13 @@ DA:55,0
 DA:56,0
 DA:57,0
 DA:59,0
+<<<<<<< HEAD
 DA:63,4
+=======
+DA:63,3
+>>>>>>> origin/dev
 LF:32
-LH:2
+LH:5
 BRF:0
 BRH:0
 end_of_record
@@ -344,6 +452,7 @@ FN:43,showSubject
 FN:54,destroy
 FN:65,showAllQuestions
 FNF:7
+<<<<<<< HEAD
 FNH:7
 FNDA:2,index
 FNDA:2,show
@@ -356,12 +465,27 @@ DA:1,4
 DA:4,2
 DA:5,2
 DA:6,2
+=======
+FNH:2
+FNDA:1,index
+FNDA:0,show
+FNDA:1,create
+FNDA:0,update
+FNDA:0,showSubject
+FNDA:0,destroy
+FNDA:0,showAllQuestions
+DA:1,3
+DA:4,1
+DA:5,1
+DA:6,1
+>>>>>>> origin/dev
 DA:8,0
 DA:13,2
 DA:14,2
 DA:15,2
 DA:16,2
 DA:18,0
+<<<<<<< HEAD
 DA:24,2
 DA:25,2
 DA:26,2
@@ -371,6 +495,17 @@ DA:34,1
 DA:35,1
 DA:36,1
 DA:37,1
+=======
+DA:24,1
+DA:25,1
+DA:26,0
+DA:28,1
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+>>>>>>> origin/dev
 DA:39,0
 DA:44,1
 DA:45,1
@@ -389,9 +524,15 @@ DA:68,1
 DA:69,1
 DA:70,1
 DA:72,0
+<<<<<<< HEAD
 DA:78,4
 LF:38
 LH:31
+=======
+DA:78,3
+LF:38
+LH:8
+>>>>>>> origin/dev
 BRF:0
 BRH:0
 end_of_record
@@ -415,7 +556,11 @@ FNDA:0,showAllFlashcards
 FNDA:0,create
 FNDA:0,update
 FNDA:0,destroy
+<<<<<<< HEAD
 DA:1,4
+=======
+DA:1,3
+>>>>>>> origin/dev
 DA:4,0
 DA:5,0
 DA:6,0
@@ -457,7 +602,11 @@ DA:76,0
 DA:77,0
 DA:78,0
 DA:80,0
+<<<<<<< HEAD
 DA:84,4
+=======
+DA:84,3
+>>>>>>> origin/dev
 LF:43
 LH:2
 BRF:0
@@ -474,6 +623,7 @@ FN:54,destroy
 FN:65,showAllSets
 FN:76,showAllQuiz
 FNF:8
+<<<<<<< HEAD
 FNH:8
 FNDA:2,index
 FNDA:2,show
@@ -487,6 +637,21 @@ DA:1,4
 DA:4,2
 DA:5,2
 DA:6,2
+=======
+FNH:0
+FNDA:0,index
+FNDA:0,show
+FNDA:0,create
+FNDA:0,update
+FNDA:0,showClient
+FNDA:0,destroy
+FNDA:0,showAllSets
+FNDA:0,showAllQuiz
+DA:1,3
+DA:4,0
+DA:5,0
+DA:6,0
+>>>>>>> origin/dev
 DA:8,0
 DA:13,2
 DA:14,2
@@ -526,7 +691,11 @@ DA:79,1
 DA:80,1
 DA:81,1
 DA:83,0
+<<<<<<< HEAD
 DA:87,4
+=======
+DA:87,3
+>>>>>>> origin/dev
 LF:44
 LH:36
 BRF:0
@@ -536,6 +705,7 @@ TN:
 SF:database/connect.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,4
 DA:2,4
 DA:4,4
@@ -547,6 +717,19 @@ DA:18,4
 LF:8
 LH:6
 BRDA:4,0,0,4
+=======
+DA:1,3
+DA:2,3
+DA:4,3
+DA:5,3
+DA:9,3
+DA:11,0
+DA:15,0
+DA:18,3
+LF:8
+LH:6
+BRDA:4,0,0,3
+>>>>>>> origin/dev
 BRDA:4,0,1,0
 BRF:2
 BRH:1
@@ -556,6 +739,7 @@ SF:middleware/authenticator.js
 FN:3,authenticator
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:35,authenticator
 DA:1,4
 DA:4,35
@@ -570,6 +754,22 @@ LF:9
 LH:7
 BRDA:7,0,0,0
 BRDA:7,0,1,35
+=======
+FNDA:22,authenticator
+DA:1,3
+DA:4,22
+DA:5,22
+DA:7,22
+DA:8,0
+DA:10,22
+DA:12,22
+DA:15,0
+DA:19,3
+LF:9
+LH:7
+BRDA:7,0,0,0
+BRDA:7,0,1,22
+>>>>>>> origin/dev
 BRF:2
 BRH:1
 end_of_record
@@ -581,7 +781,11 @@ FNH:0
 FNDA:0,logger
 DA:2,0
 DA:4,0
+<<<<<<< HEAD
 DA:7,4
+=======
+DA:7,3
+>>>>>>> origin/dev
 LF:3
 LH:1
 BRF:0
@@ -592,6 +796,7 @@ SF:middleware/teacherAuthenticator.js
 FN:4,teacherAuthenticator
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:4,teacherAuthenticator
 DA:1,4
 DA:2,4
@@ -612,6 +817,28 @@ BRDA:8,0,0,0
 BRDA:8,0,1,4
 BRDA:17,1,0,0
 BRDA:17,1,1,4
+=======
+FNDA:1,teacherAuthenticator
+DA:1,3
+DA:2,3
+DA:5,1
+DA:6,1
+DA:8,1
+DA:9,0
+DA:11,1
+DA:13,1
+DA:15,1
+DA:16,0
+DA:19,1
+DA:22,0
+DA:26,3
+LF:13
+LH:10
+BRDA:8,0,0,0
+BRDA:8,0,1,1
+BRDA:15,1,0,0
+BRDA:15,1,1,1
+>>>>>>> origin/dev
 BRF:4
 BRH:2
 end_of_record
@@ -629,6 +856,7 @@ FN:60,(anonymous_8)
 FN:64,(anonymous_9)
 FN:69,(anonymous_10)
 FNF:11
+<<<<<<< HEAD
 FNH:7
 FNDA:13,(anonymous_0)
 FNDA:2,(anonymous_1)
@@ -657,16 +885,47 @@ DA:24,0
 DA:26,8
 DA:30,0
 DA:31,0
+=======
+FNH:11
+FNDA:17,(anonymous_0)
+FNDA:2,(anonymous_1)
+FNDA:3,(anonymous_2)
+FNDA:9,(anonymous_3)
+FNDA:1,(anonymous_4)
+FNDA:2,(anonymous_5)
+FNDA:1,(anonymous_6)
+FNDA:1,(anonymous_7)
+FNDA:2,(anonymous_8)
+FNDA:1,(anonymous_9)
+FNDA:1,(anonymous_10)
+DA:1,3
+DA:2,3
+DA:3,3
+DA:7,17
+DA:8,17
+DA:9,17
+DA:10,17
+DA:11,17
+DA:17,2
+DA:18,3
+DA:22,9
+DA:23,9
+DA:24,0
+DA:26,9
+DA:30,1
+DA:31,1
+>>>>>>> origin/dev
 DA:32,0
-DA:34,0
-DA:38,1
-DA:39,1
-DA:41,1
+DA:34,1
+DA:38,2
+DA:39,2
+DA:41,2
 DA:45,1
 DA:47,1
 DA:48,0
 DA:50,1
 DA:51,1
+<<<<<<< HEAD
 DA:55,0
 DA:56,0
 DA:61,5
@@ -675,12 +934,26 @@ DA:66,0
 DA:70,0
 DA:71,0
 DA:76,4
+=======
+DA:55,1
+DA:56,1
+DA:61,2
+DA:65,1
+DA:66,1
+DA:70,1
+DA:71,1
+DA:76,3
+>>>>>>> origin/dev
 LF:34
-LH:22
+LH:31
 BRDA:23,0,0,0
+<<<<<<< HEAD
 BRDA:23,0,1,8
+=======
+BRDA:23,0,1,9
+>>>>>>> origin/dev
 BRDA:31,1,0,0
-BRDA:31,1,1,0
+BRDA:31,1,1,1
 BRDA:47,2,0,0
 BRDA:47,2,1,1
 BRDA:47,3,0,1
@@ -689,7 +962,7 @@ BRDA:47,3,2,1
 BRDA:47,3,3,1
 BRDA:47,3,4,1
 BRF:11
-BRH:7
+BRH:8
 end_of_record
 TN:
 SF:models/flashcard.js
@@ -707,13 +980,14 @@ FN:59,(anonymous_10)
 FN:64,(anonymous_11)
 FN:67,(anonymous_12)
 FNF:13
-FNH:0
-FNDA:0,(anonymous_0)
-FNDA:0,(anonymous_1)
-FNDA:0,(anonymous_2)
-FNDA:0,(anonymous_3)
+FNH:11
+FNDA:15,(anonymous_0)
+FNDA:2,(anonymous_1)
+FNDA:3,(anonymous_2)
+FNDA:4,(anonymous_3)
 FNDA:0,(anonymous_4)
 FNDA:0,(anonymous_5)
+<<<<<<< HEAD
 FNDA:0,(anonymous_6)
 FNDA:0,(anonymous_7)
 FNDA:0,(anonymous_8)
@@ -733,52 +1007,80 @@ DA:15,0
 DA:16,0
 DA:20,0
 DA:21,0
+=======
+FNDA:2,(anonymous_6)
+FNDA:1,(anonymous_7)
+FNDA:2,(anonymous_8)
+FNDA:2,(anonymous_9)
+FNDA:2,(anonymous_10)
+FNDA:2,(anonymous_11)
+FNDA:1,(anonymous_12)
+DA:1,3
+DA:5,15
+DA:6,15
+DA:7,15
+DA:8,15
+DA:9,15
+DA:10,15
+DA:11,15
+DA:15,2
+DA:16,3
+DA:20,4
+DA:21,4
+>>>>>>> origin/dev
 DA:22,0
-DA:24,0
+DA:24,4
 DA:28,0
 DA:29,0
 DA:30,0
 DA:32,0
-DA:36,0
-DA:37,0
-DA:39,0
-DA:43,0
-DA:44,0
+DA:36,2
+DA:37,2
+DA:39,2
+DA:43,1
+DA:44,1
 DA:45,0
-DA:47,0
-DA:48,0
-DA:52,0
-DA:53,0
+DA:47,1
+DA:48,1
+DA:52,2
+DA:53,2
 DA:54,0
-DA:56,0
-DA:60,0
-DA:61,0
+DA:56,2
+DA:60,2
+DA:61,2
 DA:62,0
+<<<<<<< HEAD
 DA:64,0
 DA:68,0
 DA:69,0
 DA:76,4
+=======
+DA:64,2
+DA:68,1
+DA:69,1
+DA:76,3
+>>>>>>> origin/dev
 LF:37
-LH:2
+LH:29
 BRDA:21,0,0,0
-BRDA:21,0,1,0
+BRDA:21,0,1,4
 BRDA:29,1,0,0
 BRDA:29,1,1,0
 BRDA:36,2,0,0
 BRDA:36,3,0,0
 BRDA:44,4,0,0
-BRDA:44,4,1,0
-BRDA:44,5,0,0
-BRDA:44,5,1,0
-BRDA:44,5,2,0
-BRDA:44,5,3,0
-BRDA:44,5,4,0
+BRDA:44,4,1,1
+BRDA:44,5,0,1
+BRDA:44,5,1,1
+BRDA:44,5,2,1
+BRDA:44,5,3,1
+BRDA:44,5,4,1
 BRDA:53,6,0,0
-BRDA:53,6,1,0
+BRDA:53,6,1,2
 BRDA:61,7,0,0
-BRDA:61,7,1,0
+BRDA:61,7,1,2
 BRF:17
-BRH:0
+BRH:9
 end_of_record
 TN:
 SF:models/folder.js
@@ -791,6 +1093,7 @@ FN:31,(anonymous_5)
 FN:40,(anonymous_6)
 FN:45,(anonymous_7)
 FNF:8
+<<<<<<< HEAD
 FNH:8
 FNDA:11,(anonymous_0)
 FNDA:2,(anonymous_1)
@@ -808,6 +1111,25 @@ DA:12,2
 DA:13,3
 DA:17,5
 DA:18,5
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+DA:1,3
+DA:2,3
+DA:6,0
+DA:7,0
+DA:12,0
+DA:13,0
+DA:17,0
+DA:18,0
+>>>>>>> origin/dev
 DA:19,0
 DA:21,5
 DA:25,2
@@ -818,11 +1140,19 @@ DA:33,1
 DA:34,0
 DA:36,1
 DA:37,0
+<<<<<<< HEAD
 DA:41,1
 DA:42,1
 DA:46,1
 DA:47,1
 DA:52,4
+=======
+DA:41,0
+DA:42,0
+DA:46,0
+DA:47,0
+DA:52,3
+>>>>>>> origin/dev
 LF:23
 LH:20
 BRDA:18,0,0,0
@@ -846,15 +1176,24 @@ FN:51,(anonymous_8)
 FNF:9
 FNH:3
 FNDA:1,(anonymous_0)
+<<<<<<< HEAD
 FNDA:0,(anonymous_1)
 FNDA:0,(anonymous_2)
+=======
+FNDA:1,(anonymous_1)
+FNDA:1,(anonymous_2)
+>>>>>>> origin/dev
 FNDA:0,(anonymous_3)
 FNDA:1,(anonymous_4)
 FNDA:1,(anonymous_5)
 FNDA:0,(anonymous_6)
 FNDA:0,(anonymous_7)
 FNDA:0,(anonymous_8)
+<<<<<<< HEAD
 DA:1,4
+=======
+DA:1,3
+>>>>>>> origin/dev
 DA:5,1
 DA:6,1
 DA:7,1
@@ -862,8 +1201,13 @@ DA:8,1
 DA:9,1
 DA:10,1
 DA:11,1
+<<<<<<< HEAD
 DA:15,0
 DA:16,0
+=======
+DA:15,1
+DA:16,1
+>>>>>>> origin/dev
 DA:20,0
 DA:21,0
 DA:22,0
@@ -882,9 +1226,15 @@ DA:47,0
 DA:48,0
 DA:52,0
 DA:53,0
+<<<<<<< HEAD
 DA:59,4
 LF:29
 LH:12
+=======
+DA:59,3
+LF:29
+LH:11
+>>>>>>> origin/dev
 BRDA:21,0,0,0
 BRDA:21,0,1,0
 BRDA:29,1,0,0
@@ -912,6 +1262,7 @@ FN:48,(anonymous_7)
 FN:52,(anonymous_8)
 FN:57,(anonymous_9)
 FNF:10
+<<<<<<< HEAD
 FNH:10
 FNDA:14,(anonymous_0)
 FNDA:2,(anonymous_1)
@@ -940,12 +1291,43 @@ DA:29,2
 DA:31,2
 DA:35,1
 DA:36,1
+=======
+FNH:4
+FNDA:1,(anonymous_0)
+FNDA:1,(anonymous_1)
+FNDA:1,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:1,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+FNDA:0,(anonymous_8)
+FNDA:0,(anonymous_9)
+DA:1,3
+DA:2,3
+DA:7,1
+DA:8,1
+DA:9,1
+DA:10,1
+DA:15,1
+DA:16,1
+DA:20,0
+DA:21,0
+DA:22,0
+DA:24,0
+DA:28,1
+DA:29,1
+DA:31,0
+DA:35,0
+DA:36,0
+>>>>>>> origin/dev
 DA:37,0
 DA:39,1
 DA:40,1
 DA:44,2
 DA:45,2
 DA:46,0
+<<<<<<< HEAD
 DA:48,2
 DA:53,1
 DA:54,1
@@ -954,6 +1336,16 @@ DA:59,1
 DA:66,4
 LF:29
 LH:26
+=======
+DA:48,0
+DA:53,0
+DA:54,0
+DA:58,0
+DA:59,0
+DA:66,3
+LF:29
+LH:11
+>>>>>>> origin/dev
 BRDA:21,0,0,0
 BRDA:21,0,1,5
 BRDA:36,1,0,0
@@ -969,6 +1361,7 @@ end_of_record
 TN:
 SF:models/set.js
 FN:5,(anonymous_0)
+<<<<<<< HEAD
 FN:12,(anonymous_1)
 FN:14,(anonymous_2)
 FN:17,(anonymous_3)
@@ -980,6 +1373,19 @@ FN:43,(anonymous_8)
 FN:50,(anonymous_9)
 FN:59,(anonymous_10)
 FN:64,(anonymous_11)
+=======
+FN:13,(anonymous_1)
+FN:15,(anonymous_2)
+FN:18,(anonymous_3)
+FN:26,(anonymous_4)
+FN:31,(anonymous_5)
+FN:34,(anonymous_6)
+FN:39,(anonymous_7)
+FN:42,(anonymous_8)
+FN:49,(anonymous_9)
+FN:58,(anonymous_10)
+FN:63,(anonymous_11)
+>>>>>>> origin/dev
 FNF:12
 FNH:5
 FNDA:2,(anonymous_0)
@@ -994,6 +1400,7 @@ FNDA:0,(anonymous_8)
 FNDA:0,(anonymous_9)
 FNDA:0,(anonymous_10)
 FNDA:0,(anonymous_11)
+<<<<<<< HEAD
 DA:1,4
 DA:2,4
 DA:6,2
@@ -1001,10 +1408,20 @@ DA:7,2
 DA:8,2
 DA:9,2
 DA:13,0
+=======
+DA:1,3
+DA:2,3
+DA:6,0
+DA:7,0
+DA:8,0
+DA:9,0
+DA:10,0
+>>>>>>> origin/dev
 DA:14,0
-DA:18,0
+DA:15,0
 DA:19,0
 DA:20,0
+<<<<<<< HEAD
 DA:22,0
 DA:26,1
 DA:29,1
@@ -1043,6 +1460,48 @@ BRDA:52,5,1,0
 BRDA:52,5,2,0
 BRF:12
 BRH:2
+=======
+DA:21,0
+DA:23,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:31,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:39,0
+DA:43,0
+DA:44,0
+DA:46,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:54,0
+DA:55,0
+DA:59,0
+DA:60,0
+DA:64,0
+DA:65,0
+DA:71,3
+LF:34
+LH:3
+BRDA:20,0,0,0
+BRDA:20,0,1,0
+BRDA:28,1,0,0
+BRDA:28,1,1,0
+BRDA:36,2,0,0
+BRDA:36,2,1,0
+BRDA:43,3,0,0
+BRDA:51,4,0,0
+BRDA:51,4,1,0
+BRDA:51,5,0,0
+BRDA:51,5,1,0
+BRDA:51,5,2,0
+BRDA:51,5,3,0
+BRF:13
+BRH:0
+>>>>>>> origin/dev
 end_of_record
 TN:
 SF:models/subject.js
@@ -1058,6 +1517,7 @@ FN:51,(anonymous_8)
 FN:56,(anonymous_9)
 FN:61,(anonymous_10)
 FNF:11
+<<<<<<< HEAD
 FNH:11
 FNDA:13,(anonymous_0)
 FNDA:2,(anonymous_1)
@@ -1080,6 +1540,30 @@ DA:14,2
 DA:15,3
 DA:19,6
 DA:20,6
+=======
+FNH:3
+FNDA:1,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:1,(anonymous_6)
+FNDA:1,(anonymous_7)
+FNDA:0,(anonymous_8)
+FNDA:0,(anonymous_9)
+FNDA:0,(anonymous_10)
+DA:1,3
+DA:2,3
+DA:3,3
+DA:7,1
+DA:8,1
+DA:9,1
+DA:14,0
+DA:15,0
+DA:19,0
+DA:20,0
+>>>>>>> origin/dev
 DA:21,0
 DA:23,6
 DA:27,2
@@ -1094,6 +1578,7 @@ DA:43,1
 DA:44,1
 DA:45,0
 DA:47,1
+<<<<<<< HEAD
 DA:52,1
 DA:53,1
 DA:57,1
@@ -1103,6 +1588,17 @@ DA:63,1
 DA:70,4
 LF:31
 LH:27
+=======
+DA:52,0
+DA:53,0
+DA:57,0
+DA:58,0
+DA:62,0
+DA:63,0
+DA:70,3
+LF:31
+LH:10
+>>>>>>> origin/dev
 BRDA:20,0,0,0
 BRDA:20,0,1,6
 BRDA:35,1,0,1
@@ -1112,7 +1608,11 @@ BRDA:35,2,1,0
 BRDA:44,3,0,0
 BRDA:44,3,1,1
 BRF:8
+<<<<<<< HEAD
 BRH:4
+=======
+BRH:1
+>>>>>>> origin/dev
 end_of_record
 TN:
 SF:models/token.js
@@ -1121,6 +1621,7 @@ FN:12,(anonymous_1)
 FN:19,(anonymous_2)
 FN:27,(anonymous_3)
 FNF:4
+<<<<<<< HEAD
 FNH:2
 FNDA:39,(anonymous_0)
 FNDA:0,(anonymous_1)
@@ -1134,21 +1635,48 @@ DA:9,39
 DA:13,0
 DA:14,0
 DA:16,0
+=======
+FNH:3
+FNDA:25,(anonymous_0)
+FNDA:1,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:24,(anonymous_3)
+DA:1,3
+DA:3,3
+DA:7,25
+DA:8,25
+DA:9,25
+DA:13,1
+DA:14,1
+DA:16,1
+>>>>>>> origin/dev
 DA:20,0
 DA:21,0
 DA:22,0
 DA:24,0
+<<<<<<< HEAD
 DA:28,39
 DA:29,39
 DA:30,0
 DA:32,39
 DA:36,4
+=======
+DA:28,24
+DA:29,24
+DA:30,0
+DA:32,24
+DA:36,3
+>>>>>>> origin/dev
 LF:17
-LH:9
+LH:12
 BRDA:21,0,0,0
 BRDA:21,0,1,0
 BRDA:29,1,0,0
+<<<<<<< HEAD
 BRDA:29,1,1,39
+=======
+BRDA:29,1,1,24
+>>>>>>> origin/dev
 BRF:4
 BRH:1
 end_of_record
@@ -1156,6 +1684,7 @@ TN:
 SF:routers/client.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,4
 DA:3,4
 DA:5,4
@@ -1172,6 +1701,24 @@ DA:18,4
 DA:19,4
 DA:20,4
 DA:23,4
+=======
+DA:1,3
+DA:3,3
+DA:5,3
+DA:6,3
+DA:8,3
+DA:11,3
+DA:12,3
+DA:13,3
+DA:14,3
+DA:15,3
+DA:16,3
+DA:17,3
+DA:18,3
+DA:19,3
+DA:20,3
+DA:23,3
+>>>>>>> origin/dev
 LF:16
 LH:16
 BRF:0
@@ -1181,6 +1728,7 @@ TN:
 SF:routers/flashcard.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,4
 DA:3,4
 DA:4,4
@@ -1194,6 +1742,21 @@ DA:13,4
 DA:14,4
 DA:15,4
 DA:18,4
+=======
+DA:1,3
+DA:3,3
+DA:4,3
+DA:6,3
+DA:8,3
+DA:9,3
+DA:10,3
+DA:11,3
+DA:12,3
+DA:13,3
+DA:14,3
+DA:15,3
+DA:18,3
+>>>>>>> origin/dev
 LF:13
 LH:13
 BRF:0
@@ -1203,6 +1766,7 @@ TN:
 SF:routers/folder.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,4
 DA:3,4
 DA:4,4
@@ -1214,6 +1778,19 @@ DA:11,4
 DA:12,4
 DA:13,4
 DA:17,4
+=======
+DA:1,3
+DA:3,3
+DA:4,3
+DA:6,3
+DA:8,3
+DA:9,3
+DA:10,3
+DA:11,3
+DA:12,3
+DA:13,3
+DA:17,3
+>>>>>>> origin/dev
 LF:11
 LH:11
 BRF:0
@@ -1223,6 +1800,7 @@ TN:
 SF:routers/question.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,4
 DA:2,4
 DA:4,4
@@ -1234,6 +1812,19 @@ DA:11,4
 DA:12,4
 DA:13,4
 DA:16,4
+=======
+DA:1,3
+DA:2,3
+DA:4,3
+DA:6,3
+DA:8,3
+DA:9,3
+DA:10,3
+DA:11,3
+DA:12,3
+DA:13,3
+DA:16,3
+>>>>>>> origin/dev
 LF:11
 LH:11
 BRF:0
@@ -1243,6 +1834,7 @@ TN:
 SF:routers/quiz.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,4
 DA:2,4
 DA:4,4
@@ -1256,6 +1848,21 @@ DA:13,4
 DA:14,4
 DA:15,4
 DA:18,4
+=======
+DA:1,3
+DA:2,3
+DA:4,3
+DA:5,3
+DA:7,3
+DA:9,3
+DA:10,3
+DA:11,3
+DA:12,3
+DA:13,3
+DA:14,3
+DA:15,3
+DA:18,3
+>>>>>>> origin/dev
 LF:13
 LH:13
 BRF:0
@@ -1265,6 +1872,7 @@ TN:
 SF:routers/set.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,4
 DA:3,4
 DA:5,4
@@ -1277,6 +1885,20 @@ DA:12,4
 DA:13,4
 DA:14,4
 DA:17,4
+=======
+DA:1,3
+DA:3,3
+DA:5,3
+DA:7,3
+DA:8,3
+DA:9,3
+DA:10,3
+DA:11,3
+DA:12,3
+DA:13,3
+DA:14,3
+DA:17,3
+>>>>>>> origin/dev
 LF:12
 LH:12
 BRF:0
@@ -1286,6 +1908,7 @@ TN:
 SF:routers/subject.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,4
 DA:3,4
 DA:4,4
@@ -1299,6 +1922,21 @@ DA:13,4
 DA:14,4
 DA:15,4
 DA:19,4
+=======
+DA:1,3
+DA:3,3
+DA:4,3
+DA:6,3
+DA:8,3
+DA:9,3
+DA:10,3
+DA:11,3
+DA:12,3
+DA:13,3
+DA:14,3
+DA:15,3
+DA:19,3
+>>>>>>> origin/dev
 LF:13
 LH:13
 BRF:0

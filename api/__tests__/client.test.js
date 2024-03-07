@@ -56,7 +56,7 @@ describe('Client Endpoints', () => {
     });
 
     it('POST /client/register should create a new user', async () => {
-        const payload = {"client": "Cem", "teacher": false, "username": "Gen10", "password": "1234"};;
+        const payload = {"client": "Cem", "teacher": false, "username": "Gen10", "password": "1234"};
         await request(api).post('/client/register').send(payload);
         const response2 = await request(api).get('/client').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
         const authenticated = await bcrypt.compare(payload.password, response2.body[1].password);
@@ -68,12 +68,65 @@ describe('Client Endpoints', () => {
         expect(authenticated).toEqual(true);
     });
 
+    it('POST /client/login should login the user and return a token', async () => {
+        const payload = {"username": "Henrie91", "password": "lafosse24!"};
+        const response = await request(api).post('/client/login').send(payload);
+        
+        expect(response.body.authenticated).toEqual(true);
+        expect(response.body).toHaveProperty('token');
+    })
+
     it('PATCH /client/1 should update the current user', async () => {
         const payload = {"client": "Henrietta", "teacher": false, "username": 'Henrie91', "password": '$2b$10$kTzybm7/ThVab2bsNoVHZeEeghkj.cuXYxfJHlgJilqh2xnum9XOW'};
         await request(api).patch('/client/1').send(payload).set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
         const response = await request(api).get('/client/1').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
 
         expect(response.body.teacher).toEqual(payload.teacher);
-    })
+    });
+
+    it('DELETE /client/2 should delete the newly made user', async () => {
+        const payload = {"client": "Cem", "teacher": false, "username": "Gen10", "password": "1234"};
+        await request(api).post('/client/register').send(payload);
+        const response = await request(api).delete('/client/2').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+
+        expect(response.status).toEqual(204);
+    });
+
+    it('GET /client/token/b0036e07-d0b4-4a34-8b32-58f889d75598 should give the current user', async () => {
+        const response = await request(api).get('/client/token/b0036e07-d0b4-4a34-8b32-58f889d75598');
+
+        expect(response.status).toEqual(200);
+        expect(response.body).toHaveProperty('id');
+        expect(response.body).toHaveProperty('client');
+        expect(response.body).toHaveProperty('teacher');
+        expect(response.body).toHaveProperty('username');
+        expect(response.body).toHaveProperty('password');
+    });
+
+    it('GET /client/1/flashcard should get all flashcards of client', async () => {
+        const response = await request(api).get('/client/1/flashcard').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+
+        expect(response.status).toEqual(200);
+        response.body.forEach((e) => {
+            expect(e).toHaveProperty('id');
+            expect(e).toHaveProperty('subject');
+            expect(e).toHaveProperty('set');
+            expect(e).toHaveProperty('client');
+            expect(e).toHaveProperty('term');
+            expect(e).toHaveProperty('definition');
+            expect(e).toHaveProperty('colour');
+        });
+    });
+
+    it('GET /client/1/subject should get all subjects of client', async () => {
+        const response = await request(api).get('/client/1/subject').set("Authorization", "b0036e07-d0b4-4a34-8b32-58f889d75598");
+
+        expect(response.status).toEqual(200);
+        response.body.forEach((e) => {
+            expect(e).toHaveProperty('id');
+            expect(e).toHaveProperty('client');
+            expect(e).toHaveProperty('subject');
+        });
+    });
 
 });
