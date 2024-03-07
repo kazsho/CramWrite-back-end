@@ -2,20 +2,21 @@ const db = require("../database/connect");
 const Flashcard = require("./flashcard");
 
 class Set {
-    constructor ({ set_id, folder_id, learn_set, subject_id }) {
+    constructor ({ set_id, folder_id, learn_set, subject_id, colour }) {
         this.id = set_id;
         this.folder = folder_id;
         this.set = learn_set;
-        this.subject = subject_id
+        this.subject = subject_id;
+        this.colour = colour;
     }
 
     static async getAll() {
-        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id FROM learn_set ORDER BY set_id;");
+        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id, colour FROM learn_set ORDER BY set_id;");
         return response.rows.map(g => new Set(g));
     }
 
     static async getOneById(id) {
-        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id FROM learn_set WHERE set_id = $1;", [id]);
+        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id, colour FROM learn_set WHERE set_id = $1;", [id]);
         if (response.rows.length != 1) {
             throw new Error("Unable to find learn set.");
         };
@@ -23,7 +24,7 @@ class Set {
     }
 
     static async getByFolderId(id) {
-        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id FROM learn_set WHERE folder_id = $1;", [id]);
+        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id, colour FROM learn_set WHERE folder_id = $1;", [id]);
         if (response.rows.length == 0) {
             throw new Error("Unable to find learn sets.");
         };
@@ -31,7 +32,7 @@ class Set {
     }
 
     static async getBySubjectId(id) {
-        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id FROM learn_set WHERE subject_id = $1;", [id]);
+        const response = await db.query("SELECT set_id, folder_id, learn_set, subject_id, colour FROM learn_set WHERE subject_id = $1;", [id]);
         if (response.rows.length == 0) {
             throw new Error("Unable to find learn sets.");
         };
@@ -46,11 +47,11 @@ class Set {
     }
 
     async update(body) {
-        const {folder, set, subject} = body;
-        if (!folder || !set || !subject) {
+        const {folder, set, subject, colour} = body;
+        if (!folder || !set || !subject || !colour) {
             throw new Error("Missing Data!");
         };
-        const response = await db.query('UPDATE learn_set SET folder_id = $1, learn_set = $2, subject_id = $3 WHERE set_id = $4 RETURNING *;', [folder, set, subject, this.id]);
+        const response = await db.query('UPDATE learn_set SET folder_id = $1, learn_set = $2, subject_id = $3, colour = $4 WHERE set_id = $5 RETURNING *;', [folder, set, subject, colour, this.id]);
         return new Set(response.rows[0]);
     }
 

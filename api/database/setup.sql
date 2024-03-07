@@ -54,6 +54,7 @@ CREATE TABLE learn_set (
     folder_id INT,
     learn_set VARCHAR (50) NOT NULL,
     subject_id INT NOT NULL,
+    colour VARCHAR (50) DEFAULT '#808080',
     PRIMARY KEY (set_id),
     FOREIGN KEY (folder_id) REFERENCES folder (folder_id),
     FOREIGN KEY (subject_id) REFERENCES subject (subject_id)
