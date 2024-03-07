@@ -44,7 +44,7 @@ async function showSubject (req, res) {
     try {
         const id = parseInt(req.params.id);
         const quiz = await Quiz.getBySubjectId(id);
-        res.status(200).json(subject)
+        res.status(200).json(quiz)
     } catch (err) {
         res.status(404).json({"error": err.message});
     }

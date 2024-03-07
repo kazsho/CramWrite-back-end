@@ -11,7 +11,7 @@ describe('subject Endpoints', () => {
     });
 
     beforeAll(() => {
-        api = app.listen(4000, () => {
+        api = app.listen(4300, () => {
             console.log('Test server running on port 4000')
         })
     })

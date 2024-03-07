@@ -11,7 +11,7 @@ describe('folder Endpoints', () => {
     });
 
     beforeAll(() => {
-        api = app.listen(4000, () => {
+        api = app.listen(4100, () => {
             console.log('Test server running on port 4000')
         })
     })

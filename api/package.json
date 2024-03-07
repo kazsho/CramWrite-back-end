@@ -3,7 +3,7 @@
     "dev": "nodemon -L index.js",
     "setup-db": "node ./database/setup.js",
     "test": "jest --testTimeout=10000 --detectOpenHandles --forceExit",
-    "coverage": "jest --coverage --testTimeout=10000 --forceExit"
+    "coverage": "jest --coverage --testTimeout=10000 --detectOpenHandles --forceExit"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
